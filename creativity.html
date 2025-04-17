@@ -1,29 +1,244 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>creativity</title>
+<!DOCTYPE html>
+<html lang="en">
 <link href="base.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-</style>
-</head>
 
- <nav>
-  <ul class="navbar">
-		<li class="navbarlist"><a href="index.html">Home</a> </li>
-		<li class="active"><a href="creativity.html" class="active">Creativity</a> </li>
-	<li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
-	<li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
-		<li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
-	<li class="navbarlist"><a href="faq.html">FAQ</a> </li>
-	  
-	</ul>
-	<!-- Test -->
-</nav>
-<body>
-        <div class="cursor-dot-outline"></div>
-        <div class="cursor-dot"></div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Website Layout</title>
+    <style>
+        body {
+            margin: 0; 
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
         
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        /* Grand Header Section */
+        .grand-header {
+            background: linear-gradient(to right, #8B5A2B, #5C4033, #8B5A2B);
+            text-align: center;
+            padding: 25px 0;
+            margin-bottom: 30px;
+            border-bottom: 8px solid #44281d;
+            border-top: 8px solid #44281d;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .grand-header h3 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: #FFDD33;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            }
+            to {
+                text-shadow: 0 0 10px #FFDD33, 0 0 20px #FFDD33, 0 0 30px #FFDD33, 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            }
+        }
+        
+        /* Pixelated Border */
+        .grand-header::before, .grand-header::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(to right, #44281d 0px, #44281d 12px, #5D4037 12px, #5D4037 24px);
+        }
+        
+        .grand-header::before {
+            top: -8px;
+        }
+        
+        .grand-header::after {
+            bottom: -8px;
+        }
+        
+        /* Top Space Section */
+        .top-space {
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        
+        /* Text Box Styling */
+        .text-box {
+            background-color: #222;
+            border: 1px solid #444;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        /* Main Content Area */
+        .content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Left Column */
+        .left-column {
+            flex: 1;
+            background-color: #333;
+            padding: 20px;
+            min-width: 200px;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        /* Center Column with Image */
+        .center-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: #333;
+            text-align: center;
+        }
+        
+        .minecraft-image {
+            width: 250px;
+            margin-bottom: 20px;
+        }
+        
+        /* Right Column */
+        .right-column {
+            flex: 1;
+            background-color: #333;
+            padding: 20px;
+            min-width: 200px;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        
+        /* Bottom Section */
+        .bottom-section {
+            background-color: #333;
+            padding: 20px;
+            text-align: center;
+            color: #7FFF00;
+            border-top: 1px solid #555;
+        }
+        
+
+        /* Lower Section */
+        .lower-section {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .lower-left {
+            flex: 1;
+            background-color: #333;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        .lower-right {
+            flex: 1;
+            background-color: #333;
+            padding: 20px;
+            font-size: 0.9em;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #222;
+            text-align: center;
+            padding: 20px;
+            color: #999;
+        }
+        
+        @media (max-width: 768px) {
+            .content, .lower-section {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<nav>
+    <ul class="navbar">
+          <li class="navbarlist"><a href="index.html">Home</a> </li>
+          <li class="active"><a href="creativity.html" class="active">Creativity</a> </li>
+      <li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
+      <li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
+          <li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
+      <li class="navbarlist"><a href="faq.html">FAQ</a> </li>
+        
+      </ul>
+      <!-- Test -->
+  </nav>
+<body>
+    <div class="container">
+        <!-- Grand Header -->
+        <div class="grand-header">
+            <h3>Creative Games</h3>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Top Space with Text Box -->
+        <div class="top-space">
+            <div class="text-box">
+                <p>Games are wonderful little or big things and they inspire many people, You yourself could've been inspired by one without realizing it! now for a more complex dissection of video games and how they tie into creativity. For creativity to flow you first need something that inspires you to create and for some video games is their inspiration. I feel one of the best places a persons creativity can flow is inside of Minecraft for the sole reason of how simple it looks but despite this people create things beyond what could be achieved in real life people create entire cities or spaceships and more! Now creativity doesn't just stop at creating inside games but instead it goes even further beyond that. Take Undertale for example yes it is also a simple looking game but it's music? It's music was revolutionary at the time and still is with it's sequel Deltarune. Some themes that just ooze with inspiration are Hopes and dreams,Megalovania,Battle Against a True Hero,and for the dancers out there Death By Glamour.</p>
+            </div>
+        </div>
+        <!-- Main Content Area -->
+        <div class="content">
+            <!-- Left Column -->
+            <div class="left-column">
+                <div class="text-box">
+                    <p>Now some people wonder how exactly does Video games tie to music not inside the game itself but are about the game? well there is a sub genre of hip-hop called Nerdcore which revolves around songs about being a nerd or a geek for example in the video games section we have "I Got No Time" which is about FNAF 4 or DAGames's well known "Build Our Machine" which is about BATIM. Now most may be thinking that these songs are limited to well known games however there most certainly some obscure ones out there like "Wake Me Up Before You Goat-Goat" By The Stupendium which is about Goat Simulator. Now to get back on topic, Nerdcore is a wondereful thing sprawling across a long 25 years as it started all the way back in the year 2000 with the song "Nerdcore HipHop" which was then released officially with it's video in 2013 by MC Frontalot.</p>
+                </div>
+                <div class="text-box">
+                    <p>Here's a quick list of some books that inspired video games!
+
+Annihilation by Jeff VanderMeer: This book inspired not only the video game Control but a movie of the same name!
+
+Ayn Rand's books: Ayn Rand's books didn't get a video game themselves but the ideas inside the books were inspiration for the 2007 game Bioshock.
+
+IHNMAIMS by Harlan Ellison: IHNMAIMS had a video game based pretty much exactly off the book which takes place after practically all of humanity has died and the remaining humans are tortured by A.M. a computer full of hate.</p>
+                </div>
+            </div>
+            
+            <!-- Center Column with Image -->
+            <div class="center-column">
+                <img src="imgs/GrassBlock.jpg" alt="Minecraft Grass Block" width="250" height="250" class="minecraft-image">
+                <img src="imgs/endpoem.jpg" alt="EndPoem" height="500" class="minecraft-image">
+            </div>
+            
+            <!-- Right Column -->
+            <div class="right-column">
+                <div class="text-box">
+                    <p>Now a very unsurprising thing is how video games tie into the world of cooking seeing as many video game series have their own cookbooks some of the most liked are of Minecraft.Bethesda Games,Nintendo, and FNAF. There are many foods from the games that go into these books such as Nuka-Cola,Fizzy Faz,and Cake.</p>
+                </div>
+                <div class="text-box">
+                    <p>Now to get off topic a bit for our last reason about games being creaative. I would like to talk about how video games inspire people to be more open about themselves and to make friends find love and such. Some video games that I think inspire to be more friendly are "Yakuza" for the main character's friend who is infamous for just being always near and ready to help. "It Takes Two" is a grat game about a couple overcoming the possibility of divorce through magic and trying to get back to their child to return them to normal. "A Way Out" is another great co-op Game about two friends breaking out of prison together and repairing their friendship funnily enough it is made by the same Developers of "It Takes Two". Now one of the more wacky games and final game on this list is "Lethal Company" which is known for bringing friends together and putting them on random planets and trying to collect scraps in order to meet quota while avoiding monsters and perishing to capitalism among other things and many modded things as there are many mods anyways bye bye.</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="cursor-dot-outline"></div>
+        <div class="cursor-dot"></div>
         <script src="cursor.js" async defer></script>
-    </body>
+</body>
 </html>
