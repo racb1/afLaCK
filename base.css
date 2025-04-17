@@ -55,7 +55,16 @@ a {
 	color: #FFFF00;
 }
 
+.image-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	grid-gap: 100px;
+}
 
+.image-grid img {
+	width: 100%;
+	height: auto;
+}
 
 
 
