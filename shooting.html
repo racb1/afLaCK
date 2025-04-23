@@ -13,7 +13,7 @@
 		<li class="navbarlist"><a href="index.html">Home</a> </li>
 		<li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
 	<li class="navbarlist"><a href="strategy.html" >Strategy</a> </li>
-	<li class="active"><a href="shooting.html" class="active">Shooting</a> </li>
+	<li class="navbarlist"><a href="shooting.html" class="active">Shooting</a> </li>
 		<li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
 	<li class="navbarlist"><a href="faq.html">FAQ</a> </li>
 	  
@@ -21,9 +21,30 @@
 	<!-- Test -->
 </nav>
 <body>
-        <div class="cursor-dot-outline"></div>
+
+
+
+	<footer>
+        <h3>The benefits of games</h3>
+        <p>Your gateway to video games</p>
+        <div class="social-icons">
+            Social Media: @DACCLSS
+        </div>
+        <p>&copy; 2025 DACC Lean6Sigma. All rights reserved.</p>
+    </footer>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <div class="cursor-dot-outline"></div>
         <div class="cursor-dot"></div>
-        
         <script src="cursor.js" async defer></script>
     </body>
 </html>

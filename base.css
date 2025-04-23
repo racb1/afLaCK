@@ -2,6 +2,14 @@
 html, body, html *, body * {
 	 cursor: none;
 }
+:root {
+            --primary-color: #8A2BE2;
+            --secondary-color: #43D8C9;
+            --dark-color: #222;
+            --light-color: #f4f4f4;
+            --success-color: #5cb85c;
+            --error-color: #d9534f;
+        }
  .cursor-dot, .cursor-dot-outline {
 	 pointer-events: none;
 	 position: absolute;
@@ -24,6 +32,34 @@ html, body, html *, body * {
 }
 
 
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .navbar ul {
+        margin-top: 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}
+
+.social-icons {
+    margin: 1rem 0;
+}
+
+.social-icons a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+
 ul {
     margin: auto;
     padding: 0px;
@@ -34,38 +70,60 @@ ul {
     
 }
 
-li  {
-    display: block;
-    padding: 16px;
-    color: Green;
-    text-align: center;
-    float: left;
-	
-	
-}
+		.navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--dark-color);
+            color: white;
+            padding: 1rem 5%;
+        }
+        
+                
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .navbar a:hover {
+            color: var(--secondary-color);
+        }
 
-.active {
-	color: black;
-    background-color: #FFFF00;
-    
-}
 a {
 	font-size: 28px;
   text-decoration: none;
 	color: #FFFF00;
 }
 
-.image-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-	grid-gap: 100px;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-.image-grid img {
-	width: 100%;
-	height: auto;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f0f0f0;
+    color: #333;
 }
 
+header {
+    background: linear-gradient(135deg, var(--primary-color), #6A5ACD);
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
 
+footer {
+    background: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
 
  

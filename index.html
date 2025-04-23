@@ -5,12 +5,138 @@
 <title>Home</title>
 <link href="base.css" rel="stylesheet" type="text/css">
 <style type="text/css">
-</style>
+
+	 body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #29a3ff;
+        }
+        
+        .header {
+            background-color: #29a3ff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+        }
+        
+        .nav-bar {
+            background-color: #666;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-bottom: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .content-box {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .main-content-box {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            width: 48%;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .team-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .team-image {
+            width: 20%;
+        }
+        
+        .team-content {
+            width: 55%;
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .about-sections {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            gap: 10px; /* This adds 10px of space between the about boxes */
+        }
+        
+        .about-box {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            width: calc(25% - 7.5px); /* Adjusted to account for the gap */
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        .footer {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .top-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .img-container {
+            width: 20%;
+            text-align: center;
+        }
+        
+        .img-container img {
+            width: 100%;
+            height: auto;
+        }
+        
+        .center-content {
+            width: 50%;
+        }
+	</style>
+
 </head>
 
  <nav>
   <ul class="navbar">
-		<li class="active"><a href="home.html" class="active">Home</a> </li>
+		<li class="navbarlist"><a href="home.html" class="active">Home</a> </li>
 		<li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
 	<li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
 	<li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
@@ -21,9 +147,94 @@
 	
 </nav>
 <body>
-        <div class="cursor-dot-outline"></div>
-        <div class="cursor-dot"></div>
+	<div class="container">
+        <!-- Top section with CREATIVITY, about the site, and Brain -->
+        <div class="top-section">
+            <div class="img-container">
+                <img src="/api/placeholder/150/100" alt="CREATIVITY">
+            </div>
+            
+            <div class="center-content content-box">
+                about the site
+            </div>
+            
+            <div class="img-container">
+                <img src="/api/placeholder/150/100" alt="Brain">
+            </div>
+        </div>
         
+        <!-- Middle section with goals -->
+        <div class="main-content">
+            <div class="main-content-box">
+                what our goal is
+            </div>
+            
+            <div class="main-content-box">
+                what we hope to have happen
+            </div>
+        </div>
+        
+        <!-- Team section with SHOOTING, MEET THE TEAM, and VR -->
+        <div class="team-section">
+            <div class="img-container">
+                <img src="/api/placeholder/150/100" alt="SHOOTING">
+            </div>
+            
+            <div class="center-content content-box">
+                MEET THE TEAM
+            </div>
+            
+            <div class="img-container">
+                <img src="/api/placeholder/150/100" alt="VR">
+            </div>
+        </div>
+        
+        <!-- About sections -->
+        <div class="about-sections">
+            <div class="about-box">
+                about Boone
+            </div>
+            
+            <div class="about-box">
+                Hello my name is Ally. I am a junior at Washington University majoring in Psychology. My favorite type of coffee is an Americano. I enjoy cooking, playing video games, and watching new TV series with my boyfriend. I enjoy all music but my go-to is country!
+            </div>
+            
+            <div class="about-box">
+                about amory
+            </div>
+            
+            <div class="about-box">
+                about place
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            Our info (emails and if wanted phone numbers)
+        </div>
+    </div>
+
+    <footer>
+        <h3>The benefits of games</h3>
+        <p>Your gateway to video games</p>
+        <div class="social-icons">
+            Social Media: @DACCLSS
+        </div>
+        <p>&copy; 2025 DACC Lean6Sigma. All rights reserved.</p>
+    </footer>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    <div class="cursor-dot-outline"></div>
+        <div class="cursor-dot"></div>
         <script src="cursor.js" async defer></script>
     </body>
 	<!-- Test -->

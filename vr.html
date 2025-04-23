@@ -1,29 +1,380 @@
 <!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Virtual Reality</title>
-<link href="base.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-</style>
-</head>
-
- <nav>
-  <ul class="navbar">
-		<li class="navbarlist"><a href="index.html">Home</a> </li>
-		<li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
-	<li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
-	<li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
-		<li class="active"><a href="vr.html" class="active">Virtual Reality</a> </li>
-	<li class="navbarlist"><a href="faq.html">FAQ</a> </li>
-	  
-	</ul>
-	<!-- Test -->
-</nav>
 <body>
-        <div class="cursor-dot-outline"></div>
-        <div class="cursor-dot"></div>
+<html lang="en">
+<head>
+	<title>Virtual Reality</title>
+	<link href="base.css" rel="stylesheet" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<nav>
+		<ul class="navbar">
+			  <li class="navbarlist"><a href="index.html">Home</a> </li>
+			  <li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
+		  <li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
+		  <li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
+			  <li class="navbarlist"><a href="vr.html" class="active">Virtual Reality</a> </li>
+		  <li class="navbarlist"><a href="faq.html">FAQ</a> </li>
+			
+	  </nav>
+
+    <style>
+         
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
         
-        <script src="cursor.js" async defer></script>
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/500') center center/cover no-repeat;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: opacity 0.3s;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        .btn-secondary {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+        }
+        
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .game-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .game-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .game-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .game-card:hover .game-img img {
+            transform: scale(1.1);
+        }
+        
+        .game-info {
+            padding: 1.5rem;
+        }
+        
+        .game-info h3 {
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
+        .game-info p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+        
+        .game-tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        
+        .tag {
+            background: #eee;
+            color: #333;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .rating span {
+            margin-left: 0.5rem;
+            font-weight: bold;
+        }
+        
+        section h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            font-size: 2rem;
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .benefit-card h3 {
+            color: var(--primary-color);
+            margin: 1rem 0;
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+    </style>
+</head>
+<body>
+                   <div class="hero" id="home">
+        <h1>Experience New Realities</h1>
+        <p>Dive into immersive worlds and unleash your imagination with the most exciting VR games available today.</p>
+        <a href="#games" class="btn">Explore Games</a>
+    </div>
+    
+    <div class="container">
+        <section id="games">
+            <h2>Featured VR Games</h2>
+            <div class="games-grid">
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="/api/placeholder/300/200" alt="Beat Saber">
+                    </div>
+                    <div class="game-info">
+                        <h3>Beat Saber</h3>
+                        <p>A rhythm game where you slash blocks with light sabers to the beat of music.</p>
+                        <div class="game-tags">
+                            <span class="tag">Rhythm</span>
+                            <span class="tag">Action</span>
+                            <span class="tag">Popular</span>
+                        </div>
+                        <div class="rating">
+                            ★★★★★ <span>4.9/5</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="/api/placeholder/300/200" alt="Half-Life: Alyx">
+                    </div>
+                    <div class="game-info">
+                        <h3>Half-Life: Alyx</h3>
+                        <p>A groundbreaking VR first-person shooter set in the Half-Life universe.</p>
+                        <div class="game-tags">
+                            <span class="tag">FPS</span>
+                            <span class="tag">Story</span>
+                            <span class="tag">Adventure</span>
+                        </div>
+                        <div class="rating">
+                            ★★★★★ <span>4.8/5</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="/api/placeholder/300/200" alt="Gorilla Tag">
+                    </div>
+                    <div class="game-info">
+                        <h3>Gorilla Tag</h3>
+                        <p>A multiplayer tag game where you swing around as gorillas in a jungle environment.</p>
+                        <div class="game-tags">
+                            <span class="tag">Multiplayer</span>
+                            <span class="tag">Sport</span>
+                            <span class="tag">Free</span>
+                        </div>
+                        <div class="rating">
+                            ★★★★☆ <span>4.5/5</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="/api/placeholder/300/200" alt="Superhot VR">
+                    </div>
+                    <div class="game-info">
+                        <h3>Superhot VR</h3>
+                        <p>A unique shooter where time moves only when you move.</p>
+                        <div class="game-tags">
+                            <span class="tag">Shooter</span>
+                            <span class="tag">Innovative</span>
+                            <span class="tag">Action</span>
+                        </div>
+                        <div class="rating">
+                            ★★★★☆ <span>4.7/5</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="/api/placeholder/300/200" alt="Job Simulator">
+                    </div>
+                    <div class="game-info">
+                        <h3>Job Simulator</h3>
+                        <p>Experience the joy of office simulation in a playful, robot-filled world.</p>
+                        <div class="game-tags">
+                            <span class="tag">Simulation</span>
+                            <span class="tag">Casual</span>
+                            <span class="tag">Humor</span>
+                        </div>
+                        <div class="rating">
+                            ★★★★☆ <span>4.6/5</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="/api/placeholder/300/200" alt="Moss">
+                    </div>
+                    <div class="game-info">
+                        <h3>Moss</h3>
+                        <p>A beautiful adventure game where you guide a tiny mouse hero through enchanted forests.</p>
+                        <div class="game-tags">
+                            <span class="tag">Adventure</span>
+                            <span class="tag">Puzzle</span>
+                            <span class="tag">Story</span>
+                        </div>
+                        <div class="rating">
+                            ★★★★☆ <span>4.7/5</span>
+                        </div>
+                        <a href="#" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="benefits">
+            <h2>Benefits of VR Gaming</h2>
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h3>Physical Exercise</h3>
+                    <p>Many VR games provide an excellent workout, improving cardiovascular health while having fun.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Mental Stimulation</h3>
+                    <p>VR games can improve cognitive functions, problem-solving skills, and spatial awareness.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Stress Relief</h3>
+                    <p>Immersive experiences can help reduce anxiety and provide an escape from daily pressures.</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <h3>Social Interaction</h3>
+                    <p>Multiplayer VR games allow you to connect with friends and meet new people worldwide.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+        
+    </div>
+    
+    <footer>
+        <h3>The benefits of games</h3>
+        <p>Your gateway to video games</p>
+        <div class="social-icons">
+            Social Media: @DACCLSS
+        </div>
+        <p>&copy; 2025 DACC Lean6Sigma. All rights reserved.</p>
+    </footer>
+    <script>
+        // Toggle FAQ answers
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+	<div class="cursor-dot-outline"></div>
+	<div class="cursor-dot"></div>
+	
+	<script src="cursor.js" async defer></script>
+</body>
+</html>
+        
     </body>
 </html>
