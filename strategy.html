@@ -1,68 +1,267 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<title>Strategy</title>
-<link href="base.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy</title>
+    <link href="base.css" rel="stylesheet" type="text/css">
+    <style>
+        body {
+            margin: 0; 
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            padding: 0 15px;
+        }
+        
+        /* Grand Header Section with strategy theme */
+        .grand-header {
+            background: linear-gradient(to right, #2C3E50, #4B6584, #2C3E50);
+            text-align: center;
+            padding: 25px 0;
+            margin-bottom: 30px;
+            border-bottom: 8px solid #1E2A3A;
+            border-top: 8px solid #1E2A3A;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .grand-header h3 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: #A3CFFF;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            }
+            to {
+                text-shadow: 0 0 10px #A3CFFF, 0 0 20px #A3CFFF, 0 0 30px #A3CFFF, 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            }
+        }
+        
+        /* Pixelated Border */
+        .grand-header::before, .grand-header::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(to right, #1E2A3A 0px, #1E2A3A 12px, #2C3E50 12px, #2C3E50 24px);
+        }
+        
+        .grand-header::before {
+            top: -8px;
+        }
+        
+        .grand-header::after {
+            bottom: -8px;
+        }
+        
+        /* Top Space Section */
+        .top-space {
+            padding: 20px 0;
+            margin-bottom: 20px;
+        }
+        
+        /* Text Box Styling */
+        .text-box {
+            background-color: #222;
+            border: 1px solid #444;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+        }
+        
+        /* Strategy Game Grid */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+        
+        .strategy-card {
+            background-color: #2C3E50;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .strategy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .strategy-image {
+            height: 350px; /* Increased height for larger images */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .strategy-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* This ensures the image covers the entire area without distortion */
+            object-position: center; /* Centers the image within its container */
+            transition: transform 0.5s ease;
+        }
+        
+        .strategy-card:hover .strategy-image img {
+            transform: scale(1.05);
+        }
+        
+        .strategy-description {
+            padding: 25px;
+            color: #e0e0e0;
+            line-height: 1.6;
+            font-size: 0.95em;
+            flex-grow: 1; /* Allows the description to fill available space */
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            text-align: center;
+            padding: 20px;
+            color: #999;
+            margin-top: 40px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .strategy-grid {
+                grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .strategy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .strategy-image {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .strategy-image {
+                height: 250px;
+            }
+            
+            .strategy-description {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
 </head>
 
- <nav>
-  <ul class="navbar">
-		<li class="navbarlist"><a href="index.html">Home</a> </li>
-		<li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
-	<li class="navbarlist"><a href="strategy.html" class="active">Strategy</a> </li>
-	<li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
-		<li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
-	<li class="navbarlist"><a href="faq.html">FAQ</a> </li>
-	  
-	</ul>
-	<!-- Test -->
-</nav>
 <body>
-<div class="image-grid">
-	<div class="image-container">
-		<img src="imgs/chess.jpg" alt="Chess">
-		<div class="description">Chess has profoundly influenced the world far beyond being a mere game, primarily by shaping thought and culture. Originating centuries ago and spreading globally, it has become synonymous with strategic thinking, foresight, and intellectual prowess. Playing chess demonstrably hones cognitive skills like planning, pattern recognition, and problem-solving, making it a valuable mental training tool. This strategic depth has led to chess becoming a pervasive metaphor in language, used to describe complex maneuvers in politics, business, and life itself. Furthermore, its rich symbolism and dramatic potential have cemented its place in art, literature, and film, often representing intellectual battles or intricate human dynamics.</div>
-	</div>
-	<div class="image-container">
-		<img src="imgs/tetris.jpg" alt="Tetris">
-		<div class="description">Tetris, far beyond being a simple video game, has embedded itself into the fabric of global culture and cognitive science. Its influence stretches from the realm of entertainment to psychological studies. The game's elegantly simple yet profoundly addictive mechanics have made it a timeless classic, accessible to people of all ages and backgrounds. This widespread appeal has cemented Tetris's place as a cultural icon, with its iconic shapes and music permeating popular media and artistic expression.</div>
-	</div>
-	<div class="image-container">
-		<img src="imgs/sudoku.jpg" alt="Sudoku">
-		<div class="description">Sudoku's influence on the world extends far beyond simple entertainment, embedding itself into the fabric of popular culture and cognitive engagement. Its rise to global prominence in the early 2000s sparked a puzzle craze that infiltrated newspapers, magazines, and digital platforms worldwide. This surge in popularity not only revitalized the puzzle industry but also fostered a widespread appreciation for logic and problem-solving. The accessibility of Sudoku, requiring no specialized knowledge beyond numerical reasoning, contributed to its universal appeal, transcending language and cultural barriers.</div>
-	</div>
-	<div class="image-container">
-		<img src="imgs/portal.jpg" alt="Image 4">
-		<div class="description">The "Portal" video game series has left a significant mark on the gaming world and beyond, influencing game design, narrative storytelling, and even internet culture.
- Its innovative portal mechanic, which allows players to create interconnected spaces, revolutionized puzzle-solving in video games. This core gameplay element inspired numerous developers to explore new dimensions of spatial reasoning and physics-based puzzles, pushing the boundaries of interactive entertainment.</div>
-	</div>
-</div>
-	
+    <nav>
+        <ul class="navbar">
+            <li class="navbarlist"><a href="index.html">Home</a></li>
+            <li class="navbarlist"><a href="creativity.html">Creativity</a></li>
+            <li class="navbarlist"><a href="strategy.html" class="active">Strategy</a></li>
+            <li class="navbarlist"><a href="shooting.html">Shooting</a></li>
+            <li class="navbarlist"><a href="vr.html">Virtual Reality</a></li>
+            <li class="navbarlist"><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
 
-<footer>
-	<h3>The benefits of games</h3>
-	<p>Your gateway to video games</p>
-	<div class="social-icons">
-		Social Media: @DACCLSS
-	</div>
-	<p>&copy; 2025 DACC Lean6Sigma. All rights reserved.</p>
-</footer>
-<script>
-	// Smooth scrolling for anchor links
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function(e) {
-			e.preventDefault();
-			document.querySelector(this.getAttribute('href')).scrollIntoView({
-				behavior: 'smooth'
-			});
-		});
-	});
-</script>
-<div class="cursor-dot-outline"></div>
-	<div class="cursor-dot"></div>
-	<script src="cursor.js" async defer></script>
+    <div class="container">
+        <!-- Grand Header -->
+        <div class="grand-header">
+            <h3>Strategic Games</h3>
+        </div>
+        
+        <!-- Top Space with Introduction Text Box -->
+        <div class="top-space">
+            <div class="text-box">
+                <p>Strategic games have shaped human thinking and civilization for millennia. From ancient board games to modern digital experiences, strategic games challenge our minds, hone our decision-making, and reflect the complexities of our world. These games test our ability to plan ahead, recognize patterns, and adapt to changing circumstances. Whether played on a board, on a screen, or in our minds, strategy games continue to evolve while maintaining their core essence: the intellectual challenge of outthinking your opponents or the system itself.</p>
+            </div>
+        </div>
+        
+        <!-- Strategy Game Grid -->
+        <div class="strategy-grid">
+            <div class="strategy-card">
+                <div class="strategy-image">
+                    <img src="imgs/chess.jpg" alt="Chess">
+                </div>
+                <div class="strategy-description">
+                    <p>Chess has profoundly influenced the world far beyond being a mere game, primarily by shaping thought and culture. Originating centuries ago and spreading globally, it has become synonymous with strategic thinking, foresight, and intellectual prowess. Playing chess demonstrably hones cognitive skills like planning, pattern recognition, and problem-solving, making it a valuable mental training tool. This strategic depth has led to chess becoming a pervasive metaphor in language, used to describe complex maneuvers in politics, business, and life itself. Furthermore, its rich symbolism and dramatic potential have cemented its place in art, literature, and film, often representing intellectual battles or intricate human dynamics.</p>
+                </div>
+            </div>
+            
+            <div class="strategy-card">
+                <div class="strategy-image">
+                    <img src="imgs/tetris.jpg" alt="Tetris">
+                </div>
+                <div class="strategy-description">
+                    <p>Tetris, far beyond being a simple video game, has embedded itself into the fabric of global culture and cognitive science. Its influence stretches from the realm of entertainment to psychological studies. The game's elegantly simple yet profoundly addictive mechanics have made it a timeless classic, accessible to people of all ages and backgrounds. This widespread appeal has cemented Tetris's place as a cultural icon, with its iconic shapes and music permeating popular media and artistic expression.</p>
+                </div>
+            </div>
+            
+            <div class="strategy-card">
+                <div class="strategy-image">
+                    <img src="imgs/sudoku.jpg" alt="Sudoku">
+                </div>
+                <div class="strategy-description">
+                    <p>Sudoku's influence on the world extends far beyond simple entertainment, embedding itself into the fabric of popular culture and cognitive engagement. Its rise to global prominence in the early 2000s sparked a puzzle craze that infiltrated newspapers, magazines, and digital platforms worldwide. This surge in popularity not only revitalized the puzzle industry but also fostered a widespread appreciation for logic and problem-solving. The accessibility of Sudoku, requiring no specialized knowledge beyond numerical reasoning, contributed to its universal appeal, transcending language and cultural barriers.</p>
+                </div>
+            </div>
+            
+            <div class="strategy-card">
+                <div class="strategy-image">
+                    <img src="imgs/portal.jpg" alt="Portal">
+                </div>
+                <div class="strategy-description">
+                    <p>The "Portal" video game series has left a significant mark on the gaming world and beyond, influencing game design, narrative storytelling, and even internet culture. Its innovative portal mechanic, which allows players to create interconnected spaces, revolutionized puzzle-solving in video games. This core gameplay element inspired numerous developers to explore new dimensions of spatial reasoning and physics-based puzzles, pushing the boundaries of interactive entertainment.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h3>The benefits of games</h3>
+        <p>Your gateway to video games</p>
+        <div class="social-icons">
+            Social Media: @DACCLSS
+        </div>
+        <p>&copy; 2025 DACC Lean6Sigma. All rights reserved.</p>
+    </footer>
+
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    <script src="cursor.js" async defer></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

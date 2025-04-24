@@ -19,37 +19,61 @@
 	  </nav>
 
     <style>
-         
+         .grand-header {
+            background: linear-gradient(to right, #2C3E50, #4B6584, #2C3E50);
+            text-align: center;
+            padding: 25px 0;
+            margin-bottom: 30px;
+            border-bottom: 8px solid #1E2A3A;
+            border-top: 8px solid #1E2A3A;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .grand-header h3 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: #A3CFFF;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            }
+            to {
+                text-shadow: 0 0 10px #A3CFFF, 0 0 20px #A3CFFF, 0 0 30px #A3CFFF, 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            }
+        }
+        
+        /* Pixelated Border */
+        .grand-header::before, .grand-header::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(to right, #1E2A3A 0px, #1E2A3A 12px, #2C3E50 12px, #2C3E50 24px);
+        }
+        
+        .grand-header::before {
+            top: -8px;
+        }
+        
+        .grand-header::after {
+            bottom: -8px;
+        }
+
         .container {
             max-width: 1200px;
             margin: 2rem auto;
             padding: 0 2rem;
         }
-        
-        .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/500') center center/cover no-repeat;
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-bottom: 2rem;
-            border-radius: 10px;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-        }
-        
+               
         .btn {
             display: inline-block;
             background: var(--primary-color);
@@ -186,10 +210,8 @@
     </style>
 </head>
 <body>
-                   <div class="hero" id="home">
-        <h1>Experience New Realities</h1>
-        <p>Dive into immersive worlds and unleash your imagination with the most exciting VR games available today.</p>
-        <a href="#games" class="btn">Explore Games</a>
+    <div class="grand-header">
+        <h3>Virtual Reality</h3>
     </div>
     
     <div class="container">

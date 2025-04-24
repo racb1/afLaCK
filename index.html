@@ -1,216 +1,101 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta>
-<title>Home</title>
-<link href="base.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-
-	 body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #29a3ff;
-        }
-        
-        .header {
-            background-color: #29a3ff;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-size: 24px;
-        }
-        
-        .nav-bar {
-            background-color: #666;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            margin-bottom: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .content-box {
-            background-color: white;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            text-align: center;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-        
-        .main-content {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        
-        .main-content-box {
-            background-color: white;
-            border-radius: 5px;
-            padding: 20px;
-            width: 48%;
-            text-align: center;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .team-section {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        
-        .team-image {
-            width: 20%;
-        }
-        
-        .team-content {
-            width: 55%;
-            background-color: white;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-        
-        .about-sections {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            gap: 10px; /* This adds 10px of space between the about boxes */
-        }
-        
-        .about-box {
-            background-color: white;
-            border-radius: 5px;
-            padding: 20px;
-            width: calc(25% - 7.5px); /* Adjusted to account for the gap */
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-        
-        .footer {
-            background-color: white;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-            margin-bottom: 20px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .top-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-        }
-        
-        .img-container {
-            width: 20%;
-            text-align: center;
-        }
-        
-        .img-container img {
-            width: 100%;
-            height: auto;
-        }
-        
-        .center-content {
-            width: 50%;
-        }
-	</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="base.css" rel="stylesheet" type="text/css">
 </head>
-
- <nav>
-  <ul class="navbar">
-		<li class="navbarlist"><a href="home.html" class="active">Home</a> </li>
-		<li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
-	<li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
-	<li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
-		<li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
-	<li class="navbarlist"><a href="faq.html">FAQ</a> </li>
-	  
-	</ul>
-	
-</nav>
 <body>
-	<div class="container">
+    <nav>
+        <ul class="navbar">
+            <li class="navbarlist"><a href="index.html" class="active">Home</a></li>
+            <li class="navbarlist"><a href="creativity.html">Creativity</a></li>
+            <li class="navbarlist"><a href="strategy.html">Strategy</a></li>
+            <li class="navbarlist"><a href="shooting.html">Shooting</a></li>
+            <li class="navbarlist"><a href="vr.html">Virtual Reality</a></li>
+            <li class="navbarlist"><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Grand Header like creativity.html -->
+        <div class="grand-header">
+            <h3>The Benefits of Games</h3>
+        </div>
+        
         <!-- Top section with CREATIVITY, about the site, and Brain -->
-        <div class="top-section">
-            <div class="img-container">
+        <div class="content">
+            <div class="img-container text-box">
                 <img src="/api/placeholder/150/100" alt="CREATIVITY">
             </div>
             
-            <div class="center-content content-box">
-                about the site
+            <div class="center-content text-box">
+                <h3>About The Site</h3>
+                <p>Welcome to our comprehensive resource on video games and their benefits. We explore how different game genres can positively impact cognitive development, creativity, and strategic thinking.</p>
             </div>
             
-            <div class="img-container">
+            <div class="img-container text-box">
                 <img src="/api/placeholder/150/100" alt="Brain">
             </div>
         </div>
         
         <!-- Middle section with goals -->
-        <div class="main-content">
-            <div class="main-content-box">
-                what our goal is
+        <div class="content">
+            <div class="text-box" style="flex: 1;">
+                <h3>Our Goal</h3>
+                <p>We aim to highlight the educational and developmental benefits of various video game genres, challenging the negative stereotypes often associated with gaming.</p>
             </div>
             
-            <div class="main-content-box">
-                what we hope to have happen
+            <div class="text-box" style="flex: 1;">
+                <h3>Our Vision</h3>
+                <p>We hope to inspire a new perspective on gaming as a tool for learning, creativity, and cognitive development that can be effectively integrated into educational settings.</p>
             </div>
         </div>
         
         <!-- Team section with SHOOTING, MEET THE TEAM, and VR -->
-        <div class="team-section">
-            <div class="img-container">
+        <div class="content">
+            <div class="img-container text-box">
                 <img src="/api/placeholder/150/100" alt="SHOOTING">
             </div>
             
-            <div class="center-content content-box">
-                MEET THE TEAM
+            <div class="center-content text-box">
+                <h3>MEET THE TEAM</h3>
+                <p>Our team consists of passionate gamers with expertise in education, psychology, and game design.</p>
             </div>
             
-            <div class="img-container">
+            <div class="img-container text-box">
                 <img src="/api/placeholder/150/100" alt="VR">
             </div>
         </div>
         
         <!-- About sections -->
-        <div class="about-sections">
-            <div class="about-box">
-                about Boone
+        <div class="content">
+            <div class="text-box" style="flex: 1;">
+                <h3>About Boone</h3>
+                <p>Information about Boone will be displayed here.</p>
             </div>
             
-            <div class="about-box">
-                Hello my name is Ally. I am a junior at Washington University majoring in Psychology. My favorite type of coffee is an Americano. I enjoy cooking, playing video games, and watching new TV series with my boyfriend. I enjoy all music but my go-to is country!
+            <div class="text-box" style="flex: 1;">
+                <h3>About Ally</h3>
+                <p>Hello my name is Ally. I am a junior at Washington University majoring in Psychology. My favorite type of coffee is an Americano. I enjoy cooking, playing video games, and watching new TV series with my boyfriend. I enjoy all music but my go-to is country!</p>
             </div>
             
-            <div class="about-box">
-                about amory
+            <div class="text-box" style="flex: 1;">
+                <h3>About Amory</h3>
+                <p>Information about Amory will be displayed here.</p>
             </div>
             
-            <div class="about-box">
-                about place
+            <div class="text-box" style="flex: 1;">
+                <h3>About Place</h3>
+                <p>Information about Place will be displayed here.</p>
             </div>
         </div>
         
-        <!-- Footer -->
-        <div class="footer">
-            Our info (emails and if wanted phone numbers)
+        <!-- Contact info -->
+        <div class="text-box">
+            <h3>Contact Information</h3>
+            <p>Our info (emails and if wanted phone numbers)</p>
         </div>
     </div>
 
@@ -222,6 +107,10 @@
         </div>
         <p>&copy; 2025 DACC Lean6Sigma. All rights reserved.</p>
     </footer>
+
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    <script src="cursor.js" async defer></script>
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -233,11 +122,5 @@
             });
         });
     </script>
-    <div class="cursor-dot-outline"></div>
-        <div class="cursor-dot"></div>
-        <script src="cursor.js" async defer></script>
-    </body>
-	<!-- Test -->
-	
-
+</body>
 </html>
