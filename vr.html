@@ -1,217 +1,27 @@
-<!doctype html>
-<body>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Virtual Reality</title>
-	<link href="base.css" rel="stylesheet" type="text/css">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<nav>
-		<ul class="navbar">
-			  <li class="navbarlist"><a href="index.html">Home</a> </li>
-			  <li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
-		  <li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
-		  <li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
-			  <li class="navbarlist"><a href="vr.html" class="active">Virtual Reality</a> </li>
-		  <li class="navbarlist"><a href="faq.html">FAQ</a> </li>
-			
-	  </nav>
-
-    <style>
-         .grand-header {
-            background: linear-gradient(to right, #2C3E50, #4B6584, #2C3E50);
-            text-align: center;
-            padding: 25px 0;
-            margin-bottom: 30px;
-            border-bottom: 8px solid #1E2A3A;
-            border-top: 8px solid #1E2A3A;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .grand-header h3 {
-            font-size: 2.5em;
-            text-transform: uppercase;
-            margin: 0;
-            letter-spacing: 3px;
-            font-weight: bold;
-            color: #A3CFFF;
-            text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from {
-                text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            }
-            to {
-                text-shadow: 0 0 10px #A3CFFF, 0 0 20px #A3CFFF, 0 0 30px #A3CFFF, 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            }
-        }
-        
-        /* Pixelated Border */
-        .grand-header::before, .grand-header::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 8px;
-            background: repeating-linear-gradient(to right, #1E2A3A 0px, #1E2A3A 12px, #2C3E50 12px, #2C3E50 24px);
-        }
-        
-        .grand-header::before {
-            top: -8px;
-        }
-        
-        .grand-header::after {
-            bottom: -8px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-               
-        .btn {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: opacity 0.3s;
-        }
-        
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        .btn-secondary {
-            background: var(--secondary-color);
-            color: var(--dark-color);
-        }
-        
-        .games-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-        
-        .game-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .game-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
-        }
-        
-        .game-img {
-            height: 200px;
-            overflow: hidden;
-        }
-        
-        .game-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .game-card:hover .game-img img {
-            transform: scale(1.1);
-        }
-        
-        .game-info {
-            padding: 1.5rem;
-        }
-        
-        .game-info h3 {
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        .game-info p {
-            margin-bottom: 1rem;
-            color: #666;
-        }
-        
-        .game-tags {
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 1rem;
-        }
-        
-        .tag {
-            background: #eee;
-            color: #333;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            margin-right: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-        
-        .rating {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1rem;
-        }
-        
-        .rating span {
-            margin-left: 0.5rem;
-            font-weight: bold;
-        }
-        
-        section h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--primary-color);
-            font-size: 2rem;
-        }
-        
-        .benefits {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-        
-        .benefit-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .benefit-card h3 {
-            color: var(--primary-color);
-            margin: 1rem 0;
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-    </style>
-</head>
+    <head>
+        <title>Shooting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="base.css" rel="stylesheet" type="text/css">
+        <link href="custom.css" rel="stylesheet" type="text/css">
+        <nav>
+            <ul class="navbar">
+                  <li class="navbarlist"><a href="index.html">Home</a> </li>
+                  <li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
+              <li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
+              <li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
+                  <li class="navbarlist"><a href="vr.html" class="active">Virtual Reality</a> </li>
+              <li class="navbarlist"><a href="faq.html">FAQ</a> </li>
+          </nav>
+    </head>
 <body>
-    <div class="grand-header">
-        <h3>Virtual Reality</h3>
+    <div class="container">
+        <!-- Grand Header -->
+        <div class="grand-header">
+            <h3>Virtual Reality</h3>
+        </div>
     </div>
     
     <div class="container">
@@ -396,7 +206,6 @@
 	
 	<script src="cursor.js" async defer></script>
 </body>
-</html>
         
-    </body>
+    
 </html>

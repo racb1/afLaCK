@@ -1,0 +1,342 @@
+/* ===== HOME PAGE STYLES ===== */
+/* Top section */
+.top-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.img-container {
+    width: 20%;
+    text-align: center;
+}
+
+.img-container img {
+    width: 100%;
+    height: auto;
+}
+
+.center-content {
+    width: 50%;
+}
+
+/* Contact form */
+form input, form textarea {
+    background-color: var(--box-background);
+    color: var(--text-color);
+    border: 1px solid #444;
+}
+
+/* ===== CREATIVITY PAGE STYLES ===== */
+/* Main Content Area specific to creativity */
+.left-column, .right-column {
+    flex: 1;
+    background-color: #333;
+    padding: 20px;
+    min-width: 200px;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Center Column with Image */
+.center-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #333;
+    text-align: center;
+}
+
+.minecraft-image {
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+/* Bottom Section */
+.bottom-section {
+    background-color: #333;
+    padding: 20px;
+    text-align: center;
+    color: #7FFF00;
+    border-top: 1px solid #555;
+}
+
+/* Lower Section */
+.lower-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lower-left, .lower-right {
+    flex: 1;
+    background-color: #333;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* ===== STRATEGY PAGE STYLES ===== */
+/* Strategy Game Grid */
+.strategy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.strategy-card {
+    background-color: #2C3E50;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.strategy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.strategy-image {
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+}
+
+.strategy-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.strategy-card:hover .strategy-image img {
+    transform: scale(1.05);
+}
+
+.strategy-description {
+    padding: 25px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    font-size: 0.95em;
+    flex-grow: 1;
+}
+
+@media (max-width: 1024px) {
+    .strategy-grid {
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .strategy-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .strategy-image {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .strategy-image {
+        height: 250px;
+    }
+    
+    .strategy-description {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+}
+
+/* ===== VR PAGE STYLES ===== */
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/api/placeholder/1200/500') center center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+/* Games grid */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.game-card {
+    background: var(--box-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #444;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+}
+
+.game-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.game-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.game-card:hover .game-img img {
+    transform: scale(1.1);
+}
+
+.game-info {
+    padding: 1.5rem;
+}
+
+.game-info h3 {
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.game-tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+.tag {
+    background: #eee;
+    color: #333;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.rating span {
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+
+/* Benefits section */
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.benefit-card {
+    background: var(--box-background);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 1px solid #444;
+}
+
+.benefit-card h3 {
+    color: var(--secondary-color);
+    margin: 1rem 0;
+}
+
+/* ===== FAQ PAGE STYLES ===== */
+.faq-item {
+    background: var(--box-background);
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #444;
+}
+
+.faq-question {
+    padding: 1rem;
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    padding: 1rem;
+    display: none;
+}
+
+.active .faq-answer {
+    display: block;
+}
+
+/* Image grid (shared between pages) */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-container {
+    background-color: var(--box-background);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.image-container img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.image-container .description {
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+}

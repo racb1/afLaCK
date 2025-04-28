@@ -1,192 +1,24 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategy</title>
-    <link href="base.css" rel="stylesheet" type="text/css">
-    <style>
-        body {
-            margin: 0; 
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #fff;
-        }
-        
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            position: relative;
-            padding: 0 15px;
-        }
-        
-        /* Grand Header Section with strategy theme */
-        .grand-header {
-            background: linear-gradient(to right, #2C3E50, #4B6584, #2C3E50);
-            text-align: center;
-            padding: 25px 0;
-            margin-bottom: 30px;
-            border-bottom: 8px solid #1E2A3A;
-            border-top: 8px solid #1E2A3A;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .grand-header h3 {
-            font-size: 2.5em;
-            text-transform: uppercase;
-            margin: 0;
-            letter-spacing: 3px;
-            font-weight: bold;
-            color: #A3CFFF;
-            text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from {
-                text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            }
-            to {
-                text-shadow: 0 0 10px #A3CFFF, 0 0 20px #A3CFFF, 0 0 30px #A3CFFF, 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            }
-        }
-        
-        /* Pixelated Border */
-        .grand-header::before, .grand-header::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 8px;
-            background: repeating-linear-gradient(to right, #1E2A3A 0px, #1E2A3A 12px, #2C3E50 12px, #2C3E50 24px);
-        }
-        
-        .grand-header::before {
-            top: -8px;
-        }
-        
-        .grand-header::after {
-            bottom: -8px;
-        }
-        
-        /* Top Space Section */
-        .top-space {
-            padding: 20px 0;
-            margin-bottom: 20px;
-        }
-        
-        /* Text Box Styling */
-        .text-box {
-            background-color: #222;
-            border: 1px solid #444;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-        }
-        
-        /* Strategy Game Grid */
-        .strategy-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            gap: 30px;
-            padding: 20px 0;
-        }
-        
-        .strategy-card {
-            background-color: #2C3E50;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .strategy-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-        }
-        
-        .strategy-image {
-            height: 350px; /* Increased height for larger images */
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .strategy-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* This ensures the image covers the entire area without distortion */
-            object-position: center; /* Centers the image within its container */
-            transition: transform 0.5s ease;
-        }
-        
-        .strategy-card:hover .strategy-image img {
-            transform: scale(1.05);
-        }
-        
-        .strategy-description {
-            padding: 25px;
-            color: #e0e0e0;
-            line-height: 1.6;
-            font-size: 0.95em;
-            flex-grow: 1; /* Allows the description to fill available space */
-        }
-        
-        /* Footer */
-        footer {
-            background-color: #222;
-            text-align: center;
-            padding: 20px;
-            color: #999;
-            margin-top: 40px;
-        }
-        
-        /* Responsive adjustments */
-        @media (max-width: 1024px) {
-            .strategy-grid {
-                grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .strategy-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .strategy-image {
-                height: 300px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .strategy-image {
-                height: 250px;
-            }
-            
-            .strategy-description {
-                padding: 15px;
-                font-size: 0.9em;
-            }
-        }
-    </style>
-</head>
+    <head>
+        <title>Strategy</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="base.css" rel="stylesheet" type="text/css">
+        <link href="custom.css" rel="stylesheet" type="text/css">
+        <nav>
+            <ul class="navbar">
+                  <li class="navbarlist"><a href="index.html">Home</a> </li>
+                  <li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
+              <li class="navbarlist"><a href="strategy.html" class="active">Strategy</a> </li>
+              <li class="navbarlist"><a href="shooting.html">Shooting</a> </li>
+                  <li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
+              <li class="navbarlist"><a href="faq.html">FAQ</a> </li>
+          </nav>
+    </head>
 
 <body>
-    <nav>
-        <ul class="navbar">
-            <li class="navbarlist"><a href="index.html">Home</a></li>
-            <li class="navbarlist"><a href="creativity.html">Creativity</a></li>
-            <li class="navbarlist"><a href="strategy.html" class="active">Strategy</a></li>
-            <li class="navbarlist"><a href="shooting.html">Shooting</a></li>
-            <li class="navbarlist"><a href="vr.html">Virtual Reality</a></li>
-            <li class="navbarlist"><a href="faq.html">FAQ</a></li>
-        </ul>
-    </nav>
-
+    
     <div class="container">
         <!-- Grand Header -->
         <div class="grand-header">

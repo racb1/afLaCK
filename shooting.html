@@ -1,26 +1,220 @@
-<!doctype html>
-<html>
-<head>
-<meta charset="utf-8">
-<title>Shooting</title>
-<link href="base.css" rel="stylesheet" type="text/css">
-<style type="text/css">
-</style>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Shooting</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="base.css" rel="stylesheet" type="text/css">
+        <link href="custom.css" rel="stylesheet" type="text/css">
+        <nav>
+            <ul class="navbar">
+                  <li class="navbarlist"><a href="index.html">Home</a> </li>
+                  <li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
+              <li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
+              <li class="navbarlist"><a href="shooting.html" class="active">Shooting</a> </li>
+                  <li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
+              <li class="navbarlist"><a href="faq.html">FAQ</a> </li>
+          </nav>
+    </head>
+    <style>
+/* Grand Header Section */
+.grand-header {
+            background: linear-gradient(to right, #8B5A2B, #5C4033, #8B5A2B);
+            text-align: center;
+            padding: 25px 0;
+            margin-bottom: 30px;
+            border-bottom: 8px solid #44281d;
+            border-top: 8px solid #44281d;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .grand-header h3 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin: 0;
+            letter-spacing: 3px;
+            font-weight: bold;
+            color: #FFDD33;
+            text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from {
+                text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            }
+            to {
+                text-shadow: 0 0 10px #FFDD33, 0 0 20px #FFDD33, 0 0 30px #FFDD33, 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+            }
+        }
+        
+        /* Pixelated Border */
+        .grand-header::before, .grand-header::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(to right, #44281d 0px, #44281d 12px, #5D4037 12px, #5D4037 24px);
+        }
+        
+        .grand-header::before {
+            top: -8px;
+        }
+        
+        .grand-header::after {
+            bottom: -8px;
+        }
 
- <nav>
-  <ul class="navbar">
-		<li class="navbarlist"><a href="index.html">Home</a> </li>
-		<li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
-	<li class="navbarlist"><a href="strategy.html" >Strategy</a> </li>
-	<li class="navbarlist"><a href="shooting.html" class="active">Shooting</a> </li>
-		<li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
-	<li class="navbarlist"><a href="faq.html">FAQ</a> </li>
-	  
-	</ul>
-	<!-- Test -->
-</nav>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+            background-color: #000000;
+        }
+        h1, h2 {
+            color: #ffffff;
+        }
+        .game-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        .game-content {
+            flex: 2;
+            min-width: 300px;
+            color: white;
+        }
+        .game-image {
+            flex: 1;
+            min-width: 200px;
+        }
+        .game-image img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 5px;
+        }
+        .left-aligned .game-content {
+            order: 2;
+            padding-left: 20px; /* Add space for image on the left */
+        }
+        .left-aligned .game-image {
+            order: 1;
+        }
+        .right-aligned .game-content {
+            order: 1;
+            padding-right: 20px; /* Add space for image on the right */
+        }
+        .right-aligned .game-image {
+            order: 2;
+        }
+        .game-section {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .game-title {
+            color: #0004ff;
+            margin-top: 0;
+        }
+        .bottom-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+            font-size: 0.9em;
+            color: #ffffff;
+        }
+
+
+        /* Media query for smaller screens */
+        @media (max-width: 768px) {
+            .game-row {
+                flex-direction: column; /* Stack content and image vertically */
+            }
+            .game-content {
+                order: 0; /* Reset order */
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .game-image {
+                order: 0; /* Reset order */
+            }
+            .game-row.left-aligned .game-content,
+            .game-row.right-aligned .game-content {
+                padding: 0; /* Remove padding on stacked layout */
+            }
+        }
+    </style>
+
+
 <body>
+
+    <body>
+
+        <div class="container">
+            <!-- Grand Header -->
+            <div class="grand-header">
+                <h3>Shooting Games</h3>
+            </div>
+        </div>
+        <h1>Welcome to the Shooting Games Hub!</h1>
+        <p>Explore the exciting worlds and surprising benefits of popular shooting games.</p>
+    
+    
+        <div class="game-row left-aligned">
+            <div class="game-content">
+                <div class="game-section">
+                    <h2 class="game-title">Call of Duty (COD)</h2>
+                    <p>Call of Duty (COD) can provide valuable skills that translate into everyday life, helping kids navigate daily challenges more effectively. The critical thinking and problem-solving skills honed in the game can help players approach tasks or obstacles in their day-to-day lives with a more analytical mindset, breaking down complex situations into manageable parts and finding solutions more efficiently.</p>
+                    <p>COD's emphasis on quick decision-making and adaptability under pressure can help kids stay calm and think clearly when faced with stressful or unexpected situations, whether in school, extracurricular activities, or at home. The teamwork and communication skills developed while playing in squads are highly applicable to group work, family dynamics, or social interactions, teaching kids how to collaborate, express ideas, and resolve conflicts constructively.</p>
+                    <p>Additionally, the game's focus on goal-setting and rewards can motivate kids to set personal objectives, track progress, and stay disciplined, helping them manage their time better and achieve daily goals, such as homework completion or other responsibilities. Leadership skills gained in COD can help kids take charge in group activities or take initiative in personal projects. The strategic planning and multitasking required in the game can enhance organizational skills, enabling players to juggle multiple tasks or commitments in their everyday lives.</p>
+                    <p>In short, Call of Duty can help kids build a range of skills that not only boost their academic and gaming performance but also support them in handling real-world situations with confidence and efficiency.</p>
+                </div>
+            </div>
+            <div class="game-image">
+                <img src="COD.webp" alt="Call of Duty Image">
+            </div>
+        </div>
+    
+    
+        <div class="game-row right-aligned">
+            <div class="game-content">
+                <div class="game-section">
+                    <h2 class="game-title">Valorant</h2>
+                    <p>Valorant can significantly benefit the brain by engaging multiple cognitive functions and enhancing mental agility. The game requires critical thinking and strategic planning, as players analyze their surroundings, anticipate enemy moves, and develop tactics to win, promoting problem-solving and decision-making skills. It also improves hand-eye coordination, as precision and quick reactions are key to success, sharpening the brain's ability to process visual information and execute swift movements.</p>
+                    <p>Valorant exercises memory and attention span, as players must remember maps, agent abilities, and opponents' strategies while staying focused under pressure. The game fosters multitasking, cognitive flexibility, and social cognition by requiring players to communicate and collaborate with teammates, improving emotional intelligence and empathy. Additionally, the competitive nature teaches resilience, stress management, and coping with setbacks, strengthening mental fortitude.</p>
+                    <p>Overall, Valorant enhances memory, concentration, adaptability, and executive function, offering a fun and interactive way to challenge and sharpen the brain.</p>
+                </div>
+            </div>
+            <div class="game-image">
+                <img src="valoranta.jpg" alt="Valorant Image">
+            </div>
+        </div>
+    
+    
+        <div class="game-row left-aligned">
+            <div class="game-content">
+                <div class="game-section">
+                    <h2 class="game-title">Overwatch</h2>
+                    <p>Overwatch can significantly improve hand-eye coordination and visual processing skills by requiring players to track fast-moving opponents, teammates, and objectives in a dynamic, fast-paced environment. As players navigate maps, aim at targets, and manage abilities, they must process visual information quickly and react with precision, strengthening the connection between what the eyes see and how the hands respond.</p>
+                    <p>The game's emphasis on multitasking, rapid decision-making, and tracking moving targets enhances reaction time and coordination, translating to improved motor skills in real-life activities like sports, driving, and even everyday tasks such as typing or using a smartphone. By challenging players to react swiftly to shifting visual stimuli, Overwatch helps sharpen both cognitive and motor functions, benefiting overall hand-eye coordination.</p>
+                </div>
+            </div>
+            <div class="game-image">
+                <img src="overwatch.jpg" alt="Overwatch Image">
+            </div>
+        </div>
+    
+    
+        <div class="bottom-info">
+            <p>Shooting games can boost critical thinking, teamwork, and hand-eye coordination while fostering creativity and problem-solving. They also teach perseverance, sportsmanship, and how to handle success and failure. With proper moderation, these games can be a valuable educational tool in schools.</p>
+        </div>
+    </body>
+    
 
 
 
