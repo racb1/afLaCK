@@ -6,219 +6,135 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="base.css" rel="stylesheet" type="text/css">
         <link href="custom.css" rel="stylesheet" type="text/css">
-        <nav>
-            <ul class="navbar">
-                  <li class="navbarlist"><a href="index.html">Home</a> </li>
-                  <li class="navbarlist"><a href="creativity.html">Creativity</a> </li>
-              <li class="navbarlist"><a href="strategy.html">Strategy</a> </li>
-              <li class="navbarlist"><a href="shooting.html" class="active">Shooting</a> </li>
-                  <li class="navbarlist"><a href="vr.html">Virtual Reality</a> </li>
-              <li class="navbarlist"><a href="faq.html">FAQ</a> </li>
-          </nav>
     </head>
-    <style>
-/* Grand Header Section */
-.grand-header {
-            background: linear-gradient(to right, #8B5A2B, #5C4033, #8B5A2B);
-            text-align: center;
-            padding: 25px 0;
-            margin-bottom: 30px;
-            border-bottom: 8px solid #44281d;
-            border-top: 8px solid #44281d;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-            position: relative;
-            overflow: hidden;
-        }
+<body class="theme-shooting">
+    <nav>
+        <ul class="navbar">
+            <li class="navbarlist"><a href="index.html">Home</a></li>
+            <li class="navbarlist"><a href="creativity.html">Creativity</a></li>
+            <li class="navbarlist"><a href="strategy.html">Strategy</a></li>
+            <li class="navbarlist"><a href="shooting.html" class="active">Shooting</a></li>
+            <li class="navbarlist"><a href="vr.html">Virtual Reality</a></li>
+            <li class="navbarlist"><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Grand Header -->
+        <div class="grand-header">
+            <h3>Shooting Games</h3>
+        </div>
         
-        .grand-header h3 {
-            font-size: 2.5em;
-            text-transform: uppercase;
-            margin: 0;
-            letter-spacing: 3px;
-            font-weight: bold;
-            color: #FFDD33;
-            text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            animation: glow 2s ease-in-out infinite alternate;
-        }
-        
-        @keyframes glow {
-            from {
-                text-shadow: 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            }
-            to {
-                text-shadow: 0 0 10px #FFDD33, 0 0 20px #FFDD33, 0 0 30px #FFDD33, 3px 3px 5px rgba(0,0,0,0.7), -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-            }
-        }
-        
-        /* Pixelated Border */
-        .grand-header::before, .grand-header::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 8px;
-            background: repeating-linear-gradient(to right, #44281d 0px, #44281d 12px, #5D4037 12px, #5D4037 24px);
-        }
-        
-        .grand-header::before {
-            top: -8px;
-        }
-        
-        .grand-header::after {
-            bottom: -8px;
-        }
-
-        body {
-            font-family: sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-            background-color: #000000;
-        }
-        h1, h2 {
-            color: #ffffff;
-        }
-        .game-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 30px;
-            align-items: flex-start;
-        }
-        .game-content {
-            flex: 2;
-            min-width: 300px;
-            color: white;
-        }
-        .game-image {
-            flex: 1;
-            min-width: 200px;
-        }
-        .game-image img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 5px;
-        }
-        .left-aligned .game-content {
-            order: 2;
-            padding-left: 20px; /* Add space for image on the left */
-        }
-        .left-aligned .game-image {
-            order: 1;
-        }
-        .right-aligned .game-content {
-            order: 1;
-            padding-right: 20px; /* Add space for image on the right */
-        }
-        .right-aligned .game-image {
-            order: 2;
-        }
-        .game-section {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .game-title {
-            color: #0004ff;
-            margin-top: 0;
-        }
-        .bottom-info {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #ccc;
-            font-size: 0.9em;
-            color: #ffffff;
-        }
-
-
-        /* Media query for smaller screens */
-        @media (max-width: 768px) {
-            .game-row {
-                flex-direction: column; /* Stack content and image vertically */
-            }
-            .game-content {
-                order: 0; /* Reset order */
-                padding-left: 0;
-                padding-right: 0;
-            }
-            .game-image {
-                order: 0; /* Reset order */
-            }
-            .game-row.left-aligned .game-content,
-            .game-row.right-aligned .game-content {
-                padding: 0; /* Remove padding on stacked layout */
-            }
-        }
-    </style>
-
-
-<body>
-
-    <body>
-
-        <div class="container">
-            <!-- Grand Header -->
-            <div class="grand-header">
-                <h3>Shooting Games</h3>
+        <!-- Top Space with Introduction Text Box -->
+        <div class="top-space">
+            <div class="text-box">
+                <p>Shooting games represent one of the most dynamic and popular genres in video gaming, offering players a wide range of experiences from tactical simulations to fast-paced action. These games challenge reflexes, spatial awareness, and decision-making abilities, often requiring players to navigate complex environments while managing resources and coordinating with teammates. Beyond entertainment, shooting games can develop numerous cognitive skills including attention to detail, strategic thinking, and quick reaction times. When approached mindfully and age-appropriately, they provide engaging ways to improve hand-eye coordination and problem-solving abilities.</p>
             </div>
         </div>
-        <h1>Welcome to the Shooting Games Hub!</h1>
-        <p>Explore the exciting worlds and surprising benefits of popular shooting games.</p>
-    
-    
-        <div class="game-row left-aligned">
-            <div class="game-content">
-                <div class="game-section">
-                    <h2 class="game-title">Call of Duty (COD)</h2>
-                    <p>Call of Duty (COD) can provide valuable skills that translate into everyday life, helping kids navigate daily challenges more effectively. The critical thinking and problem-solving skills honed in the game can help players approach tasks or obstacles in their day-to-day lives with a more analytical mindset, breaking down complex situations into manageable parts and finding solutions more efficiently.</p>
-                    <p>COD's emphasis on quick decision-making and adaptability under pressure can help kids stay calm and think clearly when faced with stressful or unexpected situations, whether in school, extracurricular activities, or at home. The teamwork and communication skills developed while playing in squads are highly applicable to group work, family dynamics, or social interactions, teaching kids how to collaborate, express ideas, and resolve conflicts constructively.</p>
-                    <p>Additionally, the game's focus on goal-setting and rewards can motivate kids to set personal objectives, track progress, and stay disciplined, helping them manage their time better and achieve daily goals, such as homework completion or other responsibilities. Leadership skills gained in COD can help kids take charge in group activities or take initiative in personal projects. The strategic planning and multitasking required in the game can enhance organizational skills, enabling players to juggle multiple tasks or commitments in their everyday lives.</p>
-                    <p>In short, Call of Duty can help kids build a range of skills that not only boost their academic and gaming performance but also support them in handling real-world situations with confidence and efficiency.</p>
+        
+        <!-- Featured Games Section -->
+        <section>
+            <h2>Featured Shooting Games</h2>
+            
+            <div class="featured-games">
+                <!-- Call of Duty -->
+                <div class="featured-game">
+                    <div class="game-image">
+                        <img src="imgs/cod.jpg" alt="Call of Duty">
+                    </div>
+                    <div class="game-content">
+                        <h3>Call of Duty</h3>
+                        <p>Call of Duty develops valuable transferable skills including critical thinking and problem-solving abilities. Players learn to break down complex situations into manageable parts, finding efficient solutions under pressure. The game's emphasis on quick decision-making enhances adaptability in stressful situations, while team-based gameplay fosters communication and collaboration skills applicable to group settings in school or work environments.</p>
+                        <p>The goal-oriented structure teaches players to set objectives, track progress, and maintain discipline—skills that translate to better time management and achievement in daily tasks. Leadership abilities gained through coordinating team strategies can help players take initiative in group activities or personal projects. The multitasking required also enhances organizational skills, enabling better management of multiple responsibilities.</p>
+                    </div>
+                </div>
+                
+                <!-- Valorant -->
+                <div class="featured-game alt">
+                    <div class="game-content">
+                        <h3>Valorant</h3>
+                        <p>Valorant engages multiple cognitive functions, enhancing mental agility through its tactical gameplay. Players must analyze surroundings, anticipate enemy moves, and develop winning strategies, which promotes problem-solving and decision-making abilities. The game's requirement for precision and quick reactions improves hand-eye coordination, sharpening the brain's visual processing and motor response capabilities.</p>
+                        <p>The game exercises memory and attention as players learn maps, agent abilities, and track opponent strategies while maintaining focus under pressure. It encourages multitasking and cognitive flexibility, as players must communicate with teammates while monitoring multiple aspects of the battlefield. The competitive environment teaches resilience and emotional regulation, as players learn to manage stress and recover from setbacks.</p>
+                    </div>
+                    <div class="game-image">
+                        <img src="imgs/valorant.jpg" alt="Valorant">
+                    </div>
+                </div>
+                
+                <!-- Overwatch -->
+                <div class="featured-game">
+                    <div class="game-image">
+                        <img src="imgs/overwatch.jpg" alt="Overwatch">
+                    </div>
+                    <div class="game-content">
+                        <h3>Overwatch</h3>
+                        <p>Overwatch significantly improves hand-eye coordination and visual processing by challenging players to track fast-moving targets in dynamic environments. As players navigate maps, aim at opponents, and manage character abilities, they process visual information rapidly and respond with precision, strengthening the connection between visual perception and physical response.</p>
+                        <p>The game's emphasis on team composition and role specialization fosters deep strategic thinking and adaptability, as players must adjust tactics based on the evolving match situation. With over 30 unique heroes, each with distinct abilities, Overwatch promotes character mastery and matchup understanding, encouraging players to recognize patterns and develop counters to various gameplay styles. These skills extend beyond gaming to improve coordination in real-world activities and enhance adaptability in team environments.</p>
+                    </div>
                 </div>
             </div>
-            <div class="game-image">
-                <img src="COD.webp" alt="Call of Duty Image">
-            </div>
-        </div>
-    
-    
-        <div class="game-row right-aligned">
-            <div class="game-content">
-                <div class="game-section">
-                    <h2 class="game-title">Valorant</h2>
-                    <p>Valorant can significantly benefit the brain by engaging multiple cognitive functions and enhancing mental agility. The game requires critical thinking and strategic planning, as players analyze their surroundings, anticipate enemy moves, and develop tactics to win, promoting problem-solving and decision-making skills. It also improves hand-eye coordination, as precision and quick reactions are key to success, sharpening the brain's ability to process visual information and execute swift movements.</p>
-                    <p>Valorant exercises memory and attention span, as players must remember maps, agent abilities, and opponents' strategies while staying focused under pressure. The game fosters multitasking, cognitive flexibility, and social cognition by requiring players to communicate and collaborate with teammates, improving emotional intelligence and empathy. Additionally, the competitive nature teaches resilience, stress management, and coping with setbacks, strengthening mental fortitude.</p>
-                    <p>Overall, Valorant enhances memory, concentration, adaptability, and executive function, offering a fun and interactive way to challenge and sharpen the brain.</p>
+        </section>
+        
+        <!-- Key Benefits Section -->
+        <section>
+            <h2>Key Benefits of Shooting Games</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-box">
+                    <h3>Cognitive Development</h3>
+                    <p>Shooting games improve attention to detail, spatial awareness, and information processing speed. Research shows that action game players demonstrate enhanced ability to track multiple objects simultaneously and make decisions up to 25% faster than non-players in controlled studies.</p>
+                </div>
+                
+                <div class="benefit-box">
+                    <h3>Coordination Skills</h3>
+                    <p>The precise timing and aim required in shooting games significantly enhances hand-eye coordination and fine motor control. These improvements can translate to better performance in physical activities requiring precision and timing.</p>
+                </div>
+                
+                <div class="benefit-box">
+                    <h3>Strategic Thinking</h3>
+                    <p>Modern shooting games involve complex resource management, tactical positioning, and adaptive strategy development. Players learn to analyze situations, prioritize threats, and develop plans that account for multiple variables and contingencies.</p>
+                </div>
+                
+                <div class="benefit-box">
+                    <h3>Team Collaboration</h3>
+                    <p>Multiplayer shooting games foster communication skills, role specialization, and collective problem-solving. Players develop the ability to coordinate actions with teammates, provide clear information under pressure, and adapt to team dynamics.</p>
                 </div>
             </div>
-            <div class="game-image">
-                <img src="valoranta.jpg" alt="Valorant Image">
-            </div>
-        </div>
-    
-    
-        <div class="game-row left-aligned">
-            <div class="game-content">
-                <div class="game-section">
-                    <h2 class="game-title">Overwatch</h2>
-                    <p>Overwatch can significantly improve hand-eye coordination and visual processing skills by requiring players to track fast-moving opponents, teammates, and objectives in a dynamic, fast-paced environment. As players navigate maps, aim at targets, and manage abilities, they must process visual information quickly and react with precision, strengthening the connection between what the eyes see and how the hands respond.</p>
-                    <p>The game's emphasis on multitasking, rapid decision-making, and tracking moving targets enhances reaction time and coordination, translating to improved motor skills in real-life activities like sports, driving, and even everyday tasks such as typing or using a smartphone. By challenging players to react swiftly to shifting visual stimuli, Overwatch helps sharpen both cognitive and motor functions, benefiting overall hand-eye coordination.</p>
+        </section>
+        
+        <!-- Evolution of Shooting Games Section -->
+        <section>
+            <h2>The Evolution of Shooting Games</h2>
+            
+            <div class="evolution-container">
+                <div class="evolution-box">
+                    <h3>The Arcade Era (1970s-1980s)</h3>
+                    <p>Shooting games trace their origins to the arcade cabinets of the 1970s, beginning with Taito's pioneering title Space Invaders (1978), which established fundamental mechanics still present in modern games. This was quickly followed by Galaxian (1979) and its successor Galaga (1981), which introduced more complex enemy patterns and special attacks. The fixed-screen format evolved with games like Missile Command (1980), which incorporated strategic elements by having players defend cities from incoming missiles. These early titles laid the groundwork for the genre with simple yet addictive gameplay focused on improving reflexes and accuracy.</p>
+                </div>
+                
+                <div class="evolution-box">
+                    <h3>The Rise of First-Person Shooters (1990s)</h3>
+                    <p>The early 1990s marked a revolutionary shift with Wolfenstein 3D (1992) and Doom (1993), which introduced immersive first-person perspectives that placed players directly in the action. These games established core FPS mechanics like strafing, varied weapons, and maze-like level design. The genre expanded rapidly with titles like Quake (1996), which pioneered online multiplayer deathmatch modes, and GoldenEye 007 (1997), which demonstrated how narrative-driven campaigns could work in the FPS format. By the end of the decade, Half-Life (1998) had redefined expectations by seamlessly integrating storytelling with gameplay, elevating the genre beyond pure action into a sophisticated narrative medium.</p>
+                </div>
+                
+                <div class="evolution-box">
+                    <h3>Modern Diversity (2000s-Present)</h3>
+                    <p>The 21st century has seen shooting games diversify into numerous specialized sub-genres. Tactical shooters like Rainbow Six emphasize teamwork and realistic engagement rules. Battle royale games including Fortnite and PUBG created last-player-standing formats that combine survival elements with shooting mechanics. Hero shooters like Overwatch introduced character-specific abilities that transformed team dynamics. Meanwhile, technological advancements have enabled unprecedented graphical fidelity, physics simulation, and massive multiplayer experiences. Modern shooting games now span from hyperrealistic military simulations to stylized fantasy worlds, offering experiences tailored to virtually every type of player preference.</p>
+                </div>
+                
+                <div class="evolution-box">
+                    <h3>Cultural Impact and Accessibility</h3>
+                    <p>Shooting games have significantly influenced both gaming culture and technology development. The competitive scenes around titles like Counter-Strike and Call of Duty helped establish esports as a legitimate industry. These games drove hardware innovation as players sought better performance through improved graphics cards and monitors with higher refresh rates. Meanwhile, the social aspect of shooting games has created communities and friendships spanning continents, with in-game communication evolving from text chat to seamless voice integration. Modern shooting games continue to innovate with accessibility features and input methods, making the genre more inclusive than ever before.</p>
                 </div>
             </div>
-            <div class="game-image">
-                <img src="overwatch.jpg" alt="Overwatch Image">
-            </div>
+        </section>
+        
+        <div class="bottom-info text-box">
+            <p>When approached with proper moderation and age-appropriate content selection, shooting games offer valuable benefits for cognitive development, coordination, and social skills. The evolution of the genre demonstrates how video games have grown from simple entertainment into complex interactive experiences that challenge players on multiple levels. As technology continues to advance, shooting games will likely continue to push boundaries in immersion, storytelling, and competitive play.</p>
         </div>
-    
-    
-        <div class="bottom-info">
-            <p>Shooting games can boost critical thinking, teamwork, and hand-eye coordination while fostering creativity and problem-solving. They also teach perseverance, sportsmanship, and how to handle success and failure. With proper moderation, these games can be a valuable educational tool in schools.</p>
-        </div>
-    </body>
-    
+    </div>
 
-
-
-	<footer>
+    <footer>
         <h3>The benefits of games</h3>
         <p>Your gateway to video games</p>
         <div class="social-icons">
@@ -226,6 +142,10 @@
         </div>
         <p>&copy; 2025 DACC Lean6Sigma. All rights reserved.</p>
     </footer>
+
+    <div class="cursor-dot-outline"></div>
+    <div class="cursor-dot"></div>
+    <script src="cursor.js" async defer></script>
     <script>
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -237,8 +157,5 @@
             });
         });
     </script>
-    <div class="cursor-dot-outline"></div>
-        <div class="cursor-dot"></div>
-        <script src="cursor.js" async defer></script>
-    </body>
+</body>
 </html>
