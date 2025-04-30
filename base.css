@@ -1,6 +1,7 @@
+/* Base CSS - Core styling shared across all pages */
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400|Raleway:300);
 
-/* Color variables */
+/* ===== CSS VARIABLES ===== */
 :root {
     /* Main theme colors */
     --primary-color: #8A2BE2;
@@ -20,7 +21,7 @@
     --header-text: #FFDD33;
 }
 
-/* Theme classes for different pages */
+/* ===== THEME CLASSES ===== */
 .theme-home {
     --header-gradient-start: #8B5A2B;
     --header-gradient-end: #5C4033;
@@ -75,7 +76,7 @@
     --theme-secondary: #00838F;
 }
 
-/* Cursor styling */
+/* ===== CURSOR STYLING ===== */
 html, body, html *, body * {
     cursor: none;
 }
@@ -104,7 +105,7 @@ html, body, html *, body * {
     background-color: rgba(125, 186, 200, 0.5);
 }
 
-/* General styling */
+/* ===== GENERAL STYLING ===== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -120,6 +121,7 @@ body {
     padding: 0;
 }
 
+/* ===== LAYOUT COMPONENTS ===== */
 /* Container */
 .container {
     width: 100%;
@@ -129,7 +131,7 @@ body {
     position: relative;
 }
 
-/* Navigation */
+/* ===== NAVIGATION ===== */
 .navbar {
     display: flex;
     justify-content: center;
@@ -164,7 +166,7 @@ body {
     border-bottom: 2px solid var(--header-text);
 }
 
-/* Grand Header Section */
+/* ===== HEADER ===== */
 .grand-header {
     background: linear-gradient(to right, var(--header-gradient-start), var(--header-gradient-end), var(--header-gradient-start));
     text-align: center;
@@ -214,6 +216,7 @@ body {
     bottom: -8px;
 }
 
+/* ===== COMMON UI COMPONENTS ===== */
 /* Box styling */
 .text-box {
     background-color: var(--box-background);
@@ -267,7 +270,7 @@ h2 {
     color: var(--dark-color);
 }
 
-/* Footer */
+/* ===== FOOTER ===== */
 footer {
     background: var(--dark-color);
     color: white;
@@ -287,7 +290,7 @@ footer {
     font-size: 1.5rem;
 }
 
-/* Media queries */
+/* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;

@@ -1,3 +1,5 @@
+/* Custom CSS - Page-specific styling and extensions */
+
 /* ===== SHARED STYLES FOR ALL PAGES ===== */
 /* Card and Box Styling */
 .text-box, .strategy-card, .shooting-card, .vr-card, .game-card, .benefit-card,
@@ -8,6 +10,8 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s, box-shadow 0.3s;
     margin-bottom: 20px;
+    position: relative;
+    overflow: visible;
 }
 
 .text-box:hover, .strategy-card:hover, .shooting-card:hover, .vr-card:hover,
@@ -15,15 +19,6 @@
 .benefit-box:hover, .evolution-box:hover, .faq-question:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-}
-
-/* Content Container Styles */
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-bottom: 30px;
-    padding: 0 20px;
 }
 
 /* Featured Content Layout (used across all pages) */
@@ -40,6 +35,8 @@
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: visible;
 }
 
 .featured-item:hover {
@@ -90,6 +87,8 @@
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: visible;
 }
 
 .grid-item:hover {
@@ -122,20 +121,7 @@
     font-size: 0.95em;
 }
 
-/* Section Styling */
-section {
-    margin: 40px 0;
-}
-
-section h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    color: var(--theme-accent);
-    font-size: 2rem;
-}
-
 /* ===== HOME PAGE STYLES ===== */
-/* Home page structure to match shooting.html */
 .home-intro {
     margin-bottom: 30px;
 }
@@ -157,11 +143,35 @@ section h2 {
     border-radius: 12px;
     padding: 20px;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: visible;
 }
 
 .team-member:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 221, 51, 0.3);
+}
+
+.team-member:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.team-member:hover:before {
+    opacity: 1;
 }
 
 .team-image {
@@ -197,11 +207,35 @@ section h2 {
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: visible;
 }
 
 .home-benefit-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 221, 51, 0.3);
+}
+
+.home-benefit-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.home-benefit-box:hover:before {
+    opacity: 1;
 }
 
 .img-container {
@@ -227,6 +261,36 @@ section h2 {
 .theme-home .text-box, .theme-home .grid-item, .theme-home .featured-item {
     background-color: rgba(139, 90, 43, 0.1);
     border: 1px solid rgba(139, 90, 43, 0.3);
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s, box-shadow 0.4s;
+}
+
+.theme-home .text-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 221, 51, 0.3);
+}
+
+.theme-home .text-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.theme-home .text-box:hover:before {
+    opacity: 1;
 }
 
 .theme-home h3 {
@@ -234,7 +298,6 @@ section h2 {
 }
 
 /* ===== CREATIVITY PAGE STYLES ===== */
-/* Convert to featured content layout like shooting.html */
 .creativity-featured-games {
     display: flex;
     flex-direction: column;
@@ -244,17 +307,42 @@ section h2 {
 
 .creativity-game {
     display: flex;
+    min-height: 250px;
     background-color: rgba(142, 68, 173, 0.1);
     border: 1px solid rgba(142, 68, 173, 0.3);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .creativity-game:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.creativity-game:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.creativity-game:hover:before {
+    opacity: 1;
 }
 
 .creativity-game.alt {
@@ -300,12 +388,36 @@ section h2 {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .creativity-benefit-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.creativity-benefit-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.creativity-benefit-box:hover:before {
+    opacity: 1;
 }
 
 .creativity-evolution {
@@ -321,28 +433,76 @@ section h2 {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .creativity-evolution-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
 }
 
-/* Legacy support for original layout */
+.creativity-evolution-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.creativity-evolution-box:hover:before {
+    opacity: 1;
+}
+
+/* Special layout classes for creativity page */
 .left-column, .right-column, .center-column {
     flex: 1;
     padding: 20px;
     min-width: 250px;
     border-radius: 12px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
     background-color: rgba(142, 68, 173, 0.1);
     border: 1px solid rgba(142, 68, 173, 0.3);
+    position: relative;
+    overflow: visible;
 }
 
 .left-column:hover, .right-column:hover, .center-column:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.left-column:before, .right-column:before, .center-column:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.left-column:hover:before, .right-column:hover:before, .center-column:hover:before {
+    opacity: 1;
 }
 
 .minecraft-image-container {
@@ -351,16 +511,40 @@ section h2 {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
     margin-bottom: 25px;
     padding: 15px;
     text-align: center;
     width: 100%;
+    position: relative;
+    overflow: visible;
 }
 
 .minecraft-image-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.minecraft-image-container:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.minecraft-image-container:hover:before {
+    opacity: 1;
 }
 
 .minecraft-image {
@@ -381,6 +565,36 @@ section h2 {
 .theme-creativity .grid-item, .theme-creativity .featured-item {
     background-color: rgba(142, 68, 173, 0.1);
     border: 1px solid rgba(142, 68, 173, 0.3);
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s, box-shadow 0.4s;
+}
+
+.theme-creativity .text-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.theme-creativity .text-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.theme-creativity .text-box:hover:before {
+    opacity: 1;
 }
 
 .theme-creativity h3 {
@@ -388,7 +602,6 @@ section h2 {
 }
 
 /* ===== STRATEGY PAGE STYLES ===== */
-/* Converting to match shooting.html structure */
 .strategy-featured-games {
     display: flex;
     flex-direction: column;
@@ -398,17 +611,42 @@ section h2 {
 
 .strategy-featured-game {
     display: flex;
+    min-height: 250px;
     background-color: rgba(44, 62, 80, 0.1);
     border: 1px solid rgba(44, 62, 80, 0.3);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: visible;
 }
 
 .strategy-featured-game:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(163, 207, 255, 0.3);
+}
+
+.strategy-featured-game:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.strategy-featured-game:hover:before {
+    opacity: 1;
 }
 
 .strategy-featured-game.alt {
@@ -417,8 +655,10 @@ section h2 {
 
 .strategy-game-image {
     flex: 1;
-    min-width: 300px;
-    max-width: 400px;
+    min-width: 200px;
+    max-width: 300px;
+    display: flex;
+    align-items: stretch;
     overflow: hidden;
 }
 
@@ -426,6 +666,7 @@ section h2 {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     transition: transform 0.5s ease;
 }
 
@@ -454,12 +695,36 @@ section h2 {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .strategy-benefit-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(163, 207, 255, 0.3);
+}
+
+.strategy-benefit-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.strategy-benefit-box:hover:before {
+    opacity: 1;
 }
 
 .strategy-evolution-container {
@@ -475,15 +740,39 @@ section h2 {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .strategy-evolution-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(163, 207, 255, 0.3);
 }
 
-/* Original grid style for backward compatibility */
+.strategy-evolution-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.strategy-evolution-box:hover:before {
+    opacity: 1;
+}
+
+/* Strategy card grid */
 .strategy-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
@@ -497,9 +786,38 @@ section h2 {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: visible;
+}
+
+.strategy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(163, 207, 255, 0.3);
+}
+
+.strategy-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.strategy-card:hover:before {
+    opacity: 1;
 }
 
 .strategy-image {
@@ -516,6 +834,10 @@ section h2 {
     transition: transform 0.5s ease;
 }
 
+.strategy-card:hover .strategy-image img {
+    transform: scale(1.05);
+}
+
 .strategy-description {
     padding: 25px;
     color: #e0e0e0;
@@ -529,6 +851,36 @@ section h2 {
 .theme-strategy .featured-item {
     background-color: rgba(44, 62, 80, 0.1);
     border: 1px solid rgba(44, 62, 80, 0.3);
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s, box-shadow 0.4s;
+}
+
+.theme-strategy .text-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(163, 207, 255, 0.3);
+}
+
+.theme-strategy .text-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.theme-strategy .text-box:hover:before {
+    opacity: 1;
 }
 
 .theme-strategy h3 {
@@ -536,7 +888,98 @@ section h2 {
 }
 
 /* ===== SHOOTING PAGE STYLES ===== */
-/* Already has the desired styling, just updating for consistency */
+.featured-games {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+.featured-game {
+    display: flex;
+    min-height: 250px;
+    background-color: rgba(211, 84, 0, 0.1);
+    border: 1px solid rgba(211, 84, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
+}
+
+.featured-game:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.featured-game:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.featured-game:hover:before {
+    opacity: 1;
+}
+
+.featured-game.alt {
+    flex-direction: row-reverse;
+}
+
+.game-image {
+    flex: 1;
+    min-width: 200px;
+    max-width: 300px;
+    display: flex;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+.image-container {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.game-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.featured-game:hover .game-image img {
+    transform: scale(1.05);
+}
+
+.game-content {
+    flex: 2;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.game-content h3 {
+    color: var(--theme-accent);
+    margin-bottom: 15px;
+}
+
 .shooting-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
@@ -547,57 +990,194 @@ section h2 {
 .shooting-card {
     background-color: rgba(211, 84, 0, 0.1);
     border: 1px solid rgba(211, 84, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.4s;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: visible;
+}
+
+.shooting-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.shooting-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.shooting-card:hover:before {
+    opacity: 1;
 }
 
 .shooting-image {
     height: 300px;
+    position: relative;
+    overflow: hidden;
+}
+
+.shooting-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.shooting-card:hover .shooting-image img {
+    transform: scale(1.05);
 }
 
 .shooting-description {
     padding: 25px;
+    line-height: 1.5;
 }
 
-.featured-games {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    margin: 20px 0;
-}
-
-.featured-game {
-    display: flex;
-    background-color: rgba(211, 84, 0, 0.1);
-    border: 1px solid rgba(211, 84, 0, 0.3);
-}
-
-.game-image {
-    flex: 1;
-    min-width: 300px;
-    max-width: 400px;
-    overflow: hidden;
-}
-
-.game-content {
-    flex: 2;
-    padding: 25px;
-}
-
-.benefits-grid, .evolution-container {
+.benefits-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin: 20px 0;
 }
 
-.benefit-box, .evolution-box {
+.benefit-box {
     background-color: rgba(211, 84, 0, 0.1);
     border: 1px solid rgba(211, 84, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
+}
+
+.benefit-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.benefit-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.benefit-box:hover:before {
+    opacity: 1;
+}
+
+.evolution-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.evolution-box {
+    background-color: rgba(211, 84, 0, 0.1);
+    border: 1px solid rgba(211, 84, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
+}
+
+.evolution-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.evolution-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.evolution-box:hover:before {
+    opacity: 1;
+}
+
+.bottom-info {
+    margin-top: 20px;
+    padding: 20px;
 }
 
 /* Theme-specific styling for shooting page */
 .theme-shooting .text-box, .theme-shooting .grid-item {
     background-color: rgba(211, 84, 0, 0.1);
     border: 1px solid rgba(211, 84, 0, 0.3);
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s, box-shadow 0.4s;
+}
+
+.theme-shooting .text-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.theme-shooting .text-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.theme-shooting .text-box:hover:before {
+    opacity: 1;
 }
 
 .theme-shooting h3, .theme-shooting .game-title {
@@ -605,21 +1185,45 @@ section h2 {
 }
 
 /* ===== VR PAGE STYLES ===== */
-/* Update to match featured-games style */
 .game-row {
     display: flex;
+    min-height: 250px;
     background-color: rgba(26, 35, 126, 0.1);
     border: 1px solid rgba(26, 35, 126, 0.3);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     margin-bottom: 30px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .game-row:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.game-row:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.game-row:hover:before {
+    opacity: 1;
 }
 
 .game-row.right-aligned {
@@ -627,7 +1231,12 @@ section h2 {
 }
 
 .game-section {
-    padding: 25px;
+    height: 100%;
+}
+
+.game-title {
+    color: var(--theme-accent);
+    margin-bottom: 15px;
 }
 
 .vr-grid {
@@ -640,15 +1249,63 @@ section h2 {
 .vr-card {
     background-color: rgba(26, 35, 126, 0.1);
     border: 1px solid rgba(26, 35, 126, 0.3);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.4s;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: visible;
+}
+
+.vr-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.vr-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.vr-card:hover:before {
+    opacity: 1;
 }
 
 .vr-image {
     height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+
+.vr-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+}
+
+.vr-card:hover .vr-image img {
+    transform: scale(1.05);
 }
 
 .vr-description {
     padding: 15px;
-    max-height: none;
+    line-height: 1.5;
 }
 
 .benefits {
@@ -658,11 +1315,79 @@ section h2 {
     margin: 30px 0;
 }
 
+.benefit-card {
+    background-color: rgba(26, 35, 126, 0.1);
+    border: 1px solid rgba(26, 35, 126, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
+}
+
+.benefit-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.benefit-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.benefit-card:hover:before {
+    opacity: 1;
+}
+
 /* Theme-specific styling for VR page */
 .theme-vr .text-box, .theme-vr .game-card, .theme-vr .benefit-card,
 .theme-vr .grid-item, .theme-vr .game-row {
     background-color: rgba(26, 35, 126, 0.1);
     border: 1px solid rgba(26, 35, 126, 0.3);
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s, box-shadow 0.4s;
+}
+
+.theme-vr .text-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(100, 255, 218, 0.3);
+}
+
+.theme-vr .text-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.theme-vr .text-box:hover:before {
+    opacity: 1;
 }
 
 .theme-vr .game-title, .theme-vr h3 {
@@ -670,7 +1395,6 @@ section h2 {
 }
 
 /* ===== FAQ PAGE STYLES ===== */
-/* Structure to match shooting.html */
 .faq-featured-section {
     display: flex;
     flex-direction: column;
@@ -685,12 +1409,36 @@ section h2 {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .faq-featured-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(174, 234, 0, 0.3);
+}
+
+.faq-featured-item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.faq-featured-item:hover:before {
+    opacity: 1;
 }
 
 .faq-featured-item.alt {
@@ -736,27 +1484,75 @@ section h2 {
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .faq-benefit-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(174, 234, 0, 0.3);
 }
 
-/* Original FAQ styles */
+.faq-benefit-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.faq-benefit-box:hover:before {
+    opacity: 1;
+}
+
+/* FAQ accordion styling */
 .faq-item {
     background-color: rgba(0, 96, 100, 0.1);
     border: 1px solid rgba(0, 96, 100, 0.3);
     margin-bottom: 20px;
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.4s;
+    position: relative;
+    overflow: visible;
 }
 
 .faq-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(174, 234, 0, 0.3);
+}
+
+.faq-item:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.faq-item:hover:before {
+    opacity: 1;
 }
 
 .faq-question {
@@ -769,6 +1565,8 @@ section h2 {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.3s;
+    position: relative;
+    z-index: 2;
 }
 
 .faq-question:hover {
@@ -780,6 +1578,8 @@ section h2 {
     padding: 20px;
     display: none;
     line-height: 1.6;
+    position: relative;
+    z-index: 2;
 }
 
 .active .faq-answer {
@@ -821,21 +1621,58 @@ form input:focus, form textarea:focus {
 .theme-faq .text-box, .theme-faq .grid-item {
     background-color: rgba(0, 96, 100, 0.1);
     border: 1px solid rgba(0, 96, 100, 0.3);
+    position: relative;
+    overflow: visible;
+    transition: transform 0.3s, box-shadow 0.4s;
+}
+
+.theme-faq .text-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 
+                0 0 20px rgba(174, 234, 0, 0.3);
+}
+
+.theme-faq .text-box:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 2px;
+    background: linear-gradient(to right, var(--theme-accent), var(--theme-secondary), var(--theme-accent));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.theme-faq .text-box:hover:before {
+    opacity: 1;
 }
 
 .theme-faq h3 {
     color: var(--theme-accent);
 }
 
-/* Shared Responsive Styles */
+/* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 1024px) {
-    .featured-item, .featured-item.alt, .game-row, .game-row.right-aligned {
+    .featured-item, .featured-item.alt, 
+    .featured-game, .featured-game.alt,
+    .creativity-game, .creativity-game.alt,
+    .strategy-featured-game, .strategy-featured-game.alt,
+    .faq-featured-item, .faq-featured-item.alt,
+    .game-row, .game-row.right-aligned {
         flex-direction: column;
     }
     
-    .featured-image, .game-image {
+    .featured-image, .game-image, .creativity-image, 
+    .strategy-game-image, .faq-featured-image {
         max-width: 100%;
         min-width: 100%;
+        height: 250px;
     }
     
     .strategy-grid, .shooting-grid, .vr-grid, .benefits-grid, .evolution-container {
